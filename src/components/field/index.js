@@ -117,7 +117,7 @@ export default class TextField extends PureComponent {
 
     prefix: PropTypes.string,
     suffix: PropTypes.string,
-    affixClick: PropsTypes.func,
+    affixClick: PropTypes.func,
 
     containerStyle: (ViewPropTypes || View.propTypes).style,
     inputContainerStyle: (ViewPropTypes || View.propTypes).style,
