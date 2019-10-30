@@ -553,9 +553,9 @@ export default class TextField extends PureComponent {
     };
 
     return (
-     <TouchableOpacity onPress={()=>{
-    affixClick(true);
-    }}> <Affix {...props}>{affix}</Affix></TouchableOpacity>
+     <TouchableOpacity onPress={()=>{ affixClick(true);}}>
+      <Affix {...props}>{affix}</Affix>
+     </TouchableOpacity>
     );
   }
 
