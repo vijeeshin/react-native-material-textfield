@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Platform,
   ViewPropTypes,
+  TouchableOpacity
 } from 'react-native';
 
 import Line from '../line';
@@ -116,6 +117,7 @@ export default class TextField extends PureComponent {
 
     prefix: PropTypes.string,
     suffix: PropTypes.string,
+    affixClick: PropsTypes.func,
 
     containerStyle: (ViewPropTypes || View.propTypes).style,
     inputContainerStyle: (ViewPropTypes || View.propTypes).style,
@@ -535,6 +537,7 @@ export default class TextField extends PureComponent {
       fontSize,
       baseColor: color,
       affixTextStyle: style,
+      affixClick
     } = this.props;
 
     if (null == affix) {
@@ -550,7 +553,9 @@ export default class TextField extends PureComponent {
     };
 
     return (
-      <Affix {...props}>{affix}</Affix>
+     <TouchableOpacity onPress={()=>{
+    affixClick(true);
+    }}> <Affix {...props}>{affix}</Affix></TouchableOpacity>
     );
   }
 
